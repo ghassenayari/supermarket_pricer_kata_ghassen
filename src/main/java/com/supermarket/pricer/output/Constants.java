@@ -10,6 +10,7 @@ public class Constants {
     public static final String TOTAL_BASKET_PRICE = "Your total basket price is ";
     public static final String INVALID_INPUT = "Invalid input";
     public static final String QUANTITY_MSG = "How many items of do you want to add of: ";
+    public static final String ERROR_WHEN_CREATING_INSTANCE_OF_PROMOTION = "Error when creating instance of Promotion";
 
     private Constants() {
     }
