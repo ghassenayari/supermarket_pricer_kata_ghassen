@@ -1,6 +1,7 @@
 package com.supermarket.pricer.item;
 
 import com.supermarket.pricer.promotion.Promotion;
+import com.supermarket.pricer.weight.Weight;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -12,6 +13,7 @@ public class Item {
     BigDecimal price;
     int quantity;
     Promotion promotion;
+    Weight weight;
 
     public Item(String name, BigDecimal price, Promotion promotion) {
         this.name = name;
