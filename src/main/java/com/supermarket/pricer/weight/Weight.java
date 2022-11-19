@@ -4,11 +4,11 @@ import lombok.Data;
 
 @Data
 public class Weight {
-    float weight;
+    float value;
     WeightUnity unity;
 
-    public Weight(float weight, WeightUnity unity) {
-        this.weight = weight;
+    public Weight(float value, WeightUnity unity) {
+        this.value = value;
         this.unity = unity;
     }
 }
