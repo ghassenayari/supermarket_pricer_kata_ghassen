@@ -2,11 +2,13 @@ package com.supermarket.pricer.item;
 
 import com.supermarket.pricer.promotion.Promotion;
 import com.supermarket.pricer.weight.Weight;
+import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
 
 @Data
+@Builder
 public class Item {
 
     String name;
@@ -14,17 +16,6 @@ public class Item {
     int quantity;
     Promotion promotion;
     Weight weight;
-
-    public Item(String name, BigDecimal price, Promotion promotion) {
-        this.name = name;
-        this.price = price;
-        this.promotion = promotion;
-    }
-
-    public Item(String name, BigDecimal price) {
-        this.name = name;
-        this.price = price;
-    }
 
     public float calculatePrice() {
         if (promotion != null) {

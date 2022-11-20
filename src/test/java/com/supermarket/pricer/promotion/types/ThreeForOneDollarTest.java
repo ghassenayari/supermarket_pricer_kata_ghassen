@@ -13,21 +13,21 @@ class ThreeForOneDollarTest {
 
     @Test
     void calculate_1_ThreeItemsAreSet() {
-        Item item = new Item("water bottle", new BigDecimal("5"), getPromotionType(THREE_FOR_ONE_DOLLAR).get());
+        Item item = Item.builder().name("water bottle").price(new BigDecimal("5")).promotion(getPromotionType(THREE_FOR_ONE_DOLLAR).get()).build();
         item.setQuantity(3);
         Assertions.assertEquals(1, item.calculatePrice());
     }
 
     @Test
     void calculate_2_SixItemsAreSet() {
-        Item item = new Item("water bottle", new BigDecimal("5"), getPromotionType(THREE_FOR_ONE_DOLLAR).get());
+        Item item = Item.builder().name("water bottle").price(new BigDecimal("5")).promotion(getPromotionType(THREE_FOR_ONE_DOLLAR).get()).build();
         item.setQuantity(6);
         Assertions.assertEquals(2, item.calculatePrice());
     }
 
     @Test
     void calculate_7_SevenItemsAreSet() {
-        Item item = new Item("water bottle", new BigDecimal("5"), getPromotionType(THREE_FOR_ONE_DOLLAR).get());
+        Item item = Item.builder().name("water bottle").price(new BigDecimal("5")).promotion(getPromotionType(THREE_FOR_ONE_DOLLAR).get()).build();
         item.setQuantity(7);
         Assertions.assertEquals(7, item.calculatePrice());
     }

@@ -13,9 +13,9 @@ class BasketTest {
     @BeforeEach
     void setUp() {
         basket = new Basket();
-        basket.addItem(new Item("bean can", new BigDecimal("2")));
-        basket.addItem(new Item("water bottle", new BigDecimal("3")));
-        basket.addItem(new Item("pasta pack", new BigDecimal("5")));
+        basket.addItem(Item.builder().name("bean can").price(new BigDecimal("2")).build());
+        basket.addItem(Item.builder().name("water bottle").price(new BigDecimal("3")).build());
+        basket.addItem(Item.builder().name("pasta pack").price(new BigDecimal("5")).build());
     }
 
     @Test
@@ -25,9 +25,10 @@ class BasketTest {
 
     @Test
     void calculatePrice_Positive_QuantityIsSet() {
-        Item item1 = new Item("pepsi can", new BigDecimal("6"));
+        Item.builder().name("pepsi can").price(new BigDecimal("6")).build();
+        Item item1 = Item.builder().name("pepsi can").price(new BigDecimal("6")).build();
         item1.setQuantity(5);
-        Item item2 = new Item("cola can", new BigDecimal("7"));
+        Item item2 = Item.builder().name("cola can").price(new BigDecimal("7")).build();
         item2.setQuantity(2);
         basket.addItem(item1);
         basket.addItem(item2);

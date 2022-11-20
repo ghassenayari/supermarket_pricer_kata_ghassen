@@ -31,7 +31,7 @@ public class CsvLoader implements ItemLoader {
                 if (items.containsKey(Integer.valueOf(values[0]))) {
                     items.get(Integer.valueOf(values[0])).setPrice(new BigDecimal(values[1]));
                 } else {
-                    items.put(Integer.valueOf(values[0]), new Item(UNNAMED, new BigDecimal(values[1])));
+                    items.put(Integer.valueOf(values[0]), Item.builder().name(UNNAMED).price(new BigDecimal(values[1])).build());
                 }
             }
         } catch (IOException e) {

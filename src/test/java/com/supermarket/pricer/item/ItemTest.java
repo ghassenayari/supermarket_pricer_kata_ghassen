@@ -9,13 +9,13 @@ class ItemTest {
 
     @Test
     void calculatePrice_0_QuantityIsNotSet() {
-        Item item = new Item("bean can", new BigDecimal("33"));
+        Item item = Item.builder().name("bean can").price(new BigDecimal("33")).build();
         Assertions.assertEquals(0, item.calculatePrice());
     }
 
     @Test
     void calculatePrice_Positive_QuantityIsSet() {
-        Item item = new Item("bean can", new BigDecimal("22.3"));
+        Item item = Item.builder().name("bean can").price(new BigDecimal("22.3")).build();
         item.setQuantity(2);
         Assertions.assertEquals(44.6f, item.calculatePrice());
     }
