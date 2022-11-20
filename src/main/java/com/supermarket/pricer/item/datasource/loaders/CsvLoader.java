@@ -28,15 +28,19 @@ public class CsvLoader implements ItemLoader {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(COMMA_DELIMITER);
-                if (items.containsKey(Integer.valueOf(values[0]))) {
-                    items.get(Integer.valueOf(values[0])).setPrice(new BigDecimal(values[1]));
-                } else {
-                    items.put(Integer.valueOf(values[0]), Item.builder().name(UNNAMED).price(new BigDecimal(values[1])).build());
-                }
+                updateItems(items, values);
             }
         } catch (IOException e) {
             OutputHandler.print(ERROR_WHEN_LOADING_CSV, OutputColor.RED);
             e.printStackTrace();
+        }
+    }
+
+    private void updateItems(Map<Integer, Item> items, String[] values) {
+        if (items.containsKey(Integer.valueOf(values[0]))) {
+            items.get(Integer.valueOf(values[0])).setPrice(new BigDecimal(values[1]));
+        } else {
+            items.put(Integer.valueOf(values[0]), Item.builder().name(UNNAMED).price(new BigDecimal(values[1])).build());
         }
     }
 
