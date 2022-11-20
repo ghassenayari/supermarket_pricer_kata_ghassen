@@ -1,20 +1,24 @@
 package com.supermarket.pricer.item;
 
-import java.math.BigDecimal;
+import com.supermarket.pricer.item.datasource.ItemLoader;
+import com.supermarket.pricer.item.datasource.LoaderFactory;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 import java.util.Optional;
 
-import static com.supermarket.pricer.promotion.PromotionFactory.getPromotionType;
-import static com.supermarket.pricer.promotion.PromotionType.THREE_FOR_ONE_DOLLAR;
+import static com.supermarket.pricer.item.datasource.LoaderType.CSV;
+import static com.supermarket.pricer.item.datasource.LoaderType.STATIC;
+
 
 public class ItemHolder {
     private static Map<Integer, Item> items = new LinkedHashMap<>();
+    private static ItemLoader itemLoaderCsv = LoaderFactory.getLoader(CSV);
+    private static ItemLoader itemLoaderStatic = LoaderFactory.getLoader(STATIC);
 
     static {
-        items.put(1, new Item("bean can", new BigDecimal("2"), getPromotionType(THREE_FOR_ONE_DOLLAR).get()));
-        items.put(2, new Item("water bottle", new BigDecimal("3")));
-        items.put(3, new Item("pasta pack", new BigDecimal("5")));
+        itemLoaderStatic.load(items);
+        itemLoaderCsv.load(items);
     }
 
     private ItemHolder() {

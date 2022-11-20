@@ -21,7 +21,6 @@ public class PromotionFactory {
         promotionMap.put(THREE_FOR_ONE_DOLLAR, ThreeForOneDollar.class);
         promotionMap.put(TWO_POUNDS_ONE_DOLLAR, TwoPoundsOneDollar.class);
         promotionMap.put(BUY_ONE_GET_ONE_FREE, BuyOneGetOneFree.class);
-
     }
 
     public static Optional<Promotion> getPromotionType(PromotionType type) {

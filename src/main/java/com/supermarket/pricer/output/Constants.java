@@ -12,6 +12,7 @@ public class Constants {
     public static final String QUANTITY_MSG = "How many items of do you want to add of: ";
     public static final String ERROR_WHEN_CREATING_INSTANCE_OF_PROMOTION = "Error when creating instance of Promotion";
     public static final String ERROR_WHEN_CREATING_INSTANCE_OF_CONVERTER = "Error when creating instance of Converter";
+    public static final String ERROR_WHEN_LOADING_CSV = "Error when loading csv file";
 
     private Constants() {
     }
