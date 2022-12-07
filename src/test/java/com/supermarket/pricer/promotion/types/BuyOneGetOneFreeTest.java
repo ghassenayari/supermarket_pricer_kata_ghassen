@@ -8,20 +8,20 @@ import org.junit.jupiter.params.provider.CsvSource;
 import java.math.BigDecimal;
 
 import static com.supermarket.pricer.promotion.PromotionFactory.getPromotionType;
-import static com.supermarket.pricer.promotion.PromotionType.THREE_FOR_ONE_DOLLAR;
+import static com.supermarket.pricer.promotion.PromotionType.BUY_ONE_GET_ONE_FREE;
 
-class ThreeForOneDollarTest {
-
+class BuyOneGetOneFreeTest {
     @ParameterizedTest(name = "{index} => quantity={0}, expected={2}")
     @CsvSource({
-            "3, 1",
-            "6, 2",
-            "7, 7",
-            "1, 5",
-            "2, 10"
+            "3, 8",
+            "6, 16",
+            "7, 20",
+            "1, 4",
+            "2, 8",
+            "0, 0"
     })
     void calculate_ShouldDisplayTheCorrectPrice(int quantity, int expected) {
-        Item item = Item.builder().name("water bottle").price(new BigDecimal("5")).promotion(getPromotionType(THREE_FOR_ONE_DOLLAR).get()).build();
+        Item item = Item.builder().name("pepsi bottle").price(new BigDecimal("4")).promotion(getPromotionType(BUY_ONE_GET_ONE_FREE).get()).build();
         item.setQuantity(quantity);
         Assertions.assertEquals(expected, item.calculatePrice());
     }
