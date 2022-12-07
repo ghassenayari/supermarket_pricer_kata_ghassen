@@ -5,6 +5,8 @@ import com.supermarket.pricer.output.OutputHandler;
 import com.supermarket.pricer.weight.converters.GramOunceConverter;
 import com.supermarket.pricer.weight.converters.GramPoundConverter;
 import com.supermarket.pricer.weight.converters.OuncePoundConverter;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 import org.apache.commons.collections4.map.MultiKeyMap;
 
 import java.util.Optional;
@@ -17,10 +19,8 @@ import static com.supermarket.pricer.weight.WeightUnity.*;
  * a WeightConverter instance from a convenient weight source and weight target.
  */
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ConverterFactory {
-
-    private ConverterFactory() {
-    }
 
     private static MultiKeyMap<WeightUnity, Class> converterMap = new MultiKeyMap<>();
 

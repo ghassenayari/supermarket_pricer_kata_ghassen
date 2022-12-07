@@ -1,5 +1,8 @@
 package com.supermarket.pricer.output;
 
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
+
 import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -12,6 +15,7 @@ import java.util.logging.Logger;
  * of the output color.
  */
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class OutputHandler {
 
     private static final Logger LOGGER = Logger.getLogger("InfoDisplay");
@@ -22,9 +26,6 @@ public class OutputHandler {
         ConsoleHandler handler = new ConsoleHandler();
         handler.setFormatter(formatter);
         LOGGER.addHandler(handler);
-    }
-
-    private OutputHandler() {
     }
 
     public static void print(String text, OutputColor color) {

@@ -2,6 +2,8 @@ package com.supermarket.pricer.input;
 
 import com.supermarket.pricer.item.Item;
 import com.supermarket.pricer.item.ItemHolder;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.util.Optional;
 import java.util.Scanner;
@@ -15,13 +17,11 @@ import static com.supermarket.pricer.output.OutputHandler.print;
  * used within the input process.
  */
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class InputUtils {
 
     private static final String YES = "Y";
     private static final String NO = "N";
-
-    private InputUtils() {
-    }
 
     public static boolean checkIfBasketIsReady(Scanner userInput) {
         print(FINISHED_ADDING_ITEMS_TO_YOUR_BASKET);

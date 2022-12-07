@@ -5,6 +5,8 @@ import com.supermarket.pricer.output.OutputHandler;
 import com.supermarket.pricer.promotion.types.BuyOneGetOneFree;
 import com.supermarket.pricer.promotion.types.ThreeForOneDollar;
 import com.supermarket.pricer.promotion.types.TwoPoundsOneDollar;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.util.EnumMap;
 import java.util.Optional;
@@ -17,12 +19,10 @@ import static com.supermarket.pricer.promotion.PromotionType.*;
  * an Promotion instance from a convenient promotion source.
  */
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class PromotionFactory {
 
     static EnumMap<PromotionType, Class> promotionMap = new EnumMap<>(PromotionType.class);
-
-    private PromotionFactory() {
-    }
 
     static {
         promotionMap.put(THREE_FOR_ONE_DOLLAR, ThreeForOneDollar.class);

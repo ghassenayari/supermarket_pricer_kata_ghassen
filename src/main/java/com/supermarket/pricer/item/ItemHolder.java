@@ -2,6 +2,8 @@ package com.supermarket.pricer.item;
 
 import com.supermarket.pricer.item.datasource.ItemLoader;
 import com.supermarket.pricer.item.datasource.LoaderFactory;
+import lombok.AccessLevel;
+import lombok.NoArgsConstructor;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -15,6 +17,7 @@ import static com.supermarket.pricer.item.datasource.LoaderType.STATIC;
  * from different item sources.
  */
 
+@NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ItemHolder {
     private static Map<Integer, Item> items = new LinkedHashMap<>();
     private static ItemLoader itemLoaderCsv = LoaderFactory.getLoader(CSV);
@@ -23,9 +26,6 @@ public class ItemHolder {
     static {
         itemLoaderStatic.load(items);
         itemLoaderCsv.load(items);
-    }
-
-    private ItemHolder() {
     }
 
     public static Optional<Item> getItemById(int id) {
