@@ -14,6 +14,9 @@ import static com.supermarket.pricer.weight.WeightUnity.*;
 
 public class ConverterFactory {
 
+    private ConverterFactory() {
+    }
+
     private static MultiKeyMap<WeightUnity, Class> converterMap = new MultiKeyMap<>();
 
     static {

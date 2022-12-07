@@ -8,21 +8,17 @@ import java.util.List;
 @Data
 public class Basket {
 
-    private List<Item> ItemList;
+    private List<Item> itemList;
 
     public Basket() {
-        ItemList = new ArrayList<>();
+        itemList = new ArrayList<>();
     }
 
     public void addItem(Item item) {
-        ItemList.add(item);
+        itemList.add(item);
     }
 
     public float calculatePrice() {
-        float totalPrice = 0;
-        for (Item item : ItemList) {
-            totalPrice += item.calculatePrice();
-        }
-        return totalPrice;
+        return (float) itemList.stream().map(Item::calculatePrice).mapToDouble(Double::valueOf).sum();
     }
 }

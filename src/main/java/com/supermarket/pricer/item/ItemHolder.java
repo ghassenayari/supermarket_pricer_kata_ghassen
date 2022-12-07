@@ -31,14 +31,16 @@ public class ItemHolder {
 
     public static String getItemList() {
         StringBuilder itemList = new StringBuilder();
-        for (Map.Entry<Integer, Item> entry : items.entrySet()) {
-            itemList.append("Id: " + entry.getKey() + ", product name: " + entry.getValue().getName()
-                    + ", price: " + entry.getValue().getPrice());
-            if (entry.getValue().getPromotion() != null) {
-                itemList.append(", promotion: " + entry.getValue().getPromotion().getClass().getSimpleName());
-            }
-            itemList.append("\n");
-        }
+        items.entrySet().stream().forEach(e -> appendItemInfo(itemList, e));
         return itemList.toString();
+    }
+
+    private static void appendItemInfo(StringBuilder itemList, Map.Entry<Integer, Item> entry) {
+        itemList.append("Id: " + entry.getKey() + ", product name: " + entry.getValue().getName()
+                + ", price: " + entry.getValue().getPrice());
+        if (entry.getValue().getPromotion() != null) {
+            itemList.append(", promotion: " + entry.getValue().getPromotion().getClass().getSimpleName());
+        }
+        itemList.append("\n");
     }
 }

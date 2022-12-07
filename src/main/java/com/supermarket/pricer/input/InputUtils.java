@@ -33,7 +33,7 @@ public class InputUtils {
 
     public static Item readProductId(Scanner userInput) {
         try {
-            int id = Integer.valueOf(userInput.nextLine());
+            int id = Integer.parseInt(userInput.nextLine());
             Optional<Item> item = ItemHolder.getItemById(id);
             if (!item.isPresent()) {
                 print(NONEXISTENT_PRODUCT_ID, RED);

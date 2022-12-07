@@ -6,8 +6,7 @@ import com.supermarket.pricer.promotion.types.BuyOneGetOneFree;
 import com.supermarket.pricer.promotion.types.ThreeForOneDollar;
 import com.supermarket.pricer.promotion.types.TwoPoundsOneDollar;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.EnumMap;
 import java.util.Optional;
 
 import static com.supermarket.pricer.output.Constants.ERROR_WHEN_CREATING_INSTANCE_OF_PROMOTION;
@@ -15,7 +14,10 @@ import static com.supermarket.pricer.promotion.PromotionType.*;
 
 public class PromotionFactory {
 
-    static Map<PromotionType, Class> promotionMap = new HashMap<>();
+    static EnumMap<PromotionType, Class> promotionMap = new EnumMap<>(PromotionType.class);
+
+    private PromotionFactory() {
+    }
 
     static {
         promotionMap.put(THREE_FOR_ONE_DOLLAR, ThreeForOneDollar.class);
