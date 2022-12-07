@@ -5,6 +5,11 @@ import com.supermarket.pricer.promotion.Promotion;
 import com.supermarket.pricer.weight.Weight;
 import com.supermarket.pricer.weight.WeightUnity;
 
+/**
+ * This class depicts the calculation logic for the
+ * Two Pounds One Dollar promotion.
+ */
+
 public class TwoPoundsOneDollar implements Promotion {
     @Override
     public float calculate(Item item) {

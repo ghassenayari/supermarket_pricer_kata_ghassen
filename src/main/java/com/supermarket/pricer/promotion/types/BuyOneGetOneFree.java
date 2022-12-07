@@ -3,6 +3,11 @@ package com.supermarket.pricer.promotion.types;
 import com.supermarket.pricer.item.Item;
 import com.supermarket.pricer.promotion.Promotion;
 
+/**
+ * This class depicts the calculation logic for the
+ * Buy One Get One Free promotion.
+ */
+
 public class BuyOneGetOneFree implements Promotion {
     @Override
     public float calculate(Item item) {

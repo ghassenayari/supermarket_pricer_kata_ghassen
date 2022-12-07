@@ -3,6 +3,11 @@ package com.supermarket.pricer.promotion.types;
 import com.supermarket.pricer.item.Item;
 import com.supermarket.pricer.promotion.Promotion;
 
+/**
+ * This class depicts the calculation logic for the
+ * Three For One Dollar promotion.
+ */
+
 public class ThreeForOneDollar implements Promotion {
     @Override
     public float calculate(Item item) {

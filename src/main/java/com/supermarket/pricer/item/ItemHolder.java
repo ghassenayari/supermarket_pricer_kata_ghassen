@@ -10,6 +10,10 @@ import java.util.Optional;
 import static com.supermarket.pricer.item.datasource.LoaderType.CSV;
 import static com.supermarket.pricer.item.datasource.LoaderType.STATIC;
 
+/**
+ * ItemHolder is a responsible for loading items
+ * from different item sources.
+ */
 
 public class ItemHolder {
     private static Map<Integer, Item> items = new LinkedHashMap<>();

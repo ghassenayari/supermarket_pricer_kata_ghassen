@@ -1,5 +1,9 @@
 package com.supermarket.pricer.output;
 
+/**
+ * Message constants are contained within this class.
+ */
+
 public class Constants {
     public static final String WELCOME = "Welcome to our Supermarket Pricer.";
     public static final String SELECTION_MESSAGE = "Please select the item ID that you want to add to your basket.";

@@ -5,6 +5,12 @@ import lombok.Data;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Basket is a class holding the contents
+ * of the basket and implementing the
+ * behaviour of items list.
+ */
+
 @Data
 public class Basket {
 

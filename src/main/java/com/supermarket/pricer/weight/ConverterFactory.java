@@ -12,6 +12,11 @@ import java.util.Optional;
 import static com.supermarket.pricer.output.Constants.ERROR_WHEN_CREATING_INSTANCE_OF_CONVERTER;
 import static com.supermarket.pricer.weight.WeightUnity.*;
 
+/**
+ * ConverterFactory is a factory class dedicated for creating
+ * a WeightConverter instance from a convenient weight source and weight target.
+ */
+
 public class ConverterFactory {
 
     private ConverterFactory() {

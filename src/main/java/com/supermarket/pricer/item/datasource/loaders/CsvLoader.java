@@ -13,6 +13,11 @@ import java.util.Map;
 
 import static com.supermarket.pricer.output.Constants.ERROR_WHEN_LOADING_CSV;
 
+/**
+ * CsvLoader is an implementation of the ItemLoader interface that
+ * provides mechanisms for loading csv contents into an item.
+ */
+
 public class CsvLoader implements ItemLoader {
     private static final String COMMA_DELIMITER = ",";
     private static final String DEFAULT_FILE_PATH = "pricer.csv";

@@ -10,6 +10,11 @@ import static com.supermarket.pricer.output.Constants.*;
 import static com.supermarket.pricer.output.OutputColor.RED;
 import static com.supermarket.pricer.output.OutputHandler.print;
 
+/**
+ * InputUtils is an utility class dedicated for stating any utility method
+ * used within the input process.
+ */
+
 public class InputUtils {
 
     private static final String YES = "Y";

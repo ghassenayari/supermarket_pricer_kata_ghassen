@@ -13,6 +13,10 @@ import static com.supermarket.pricer.promotion.PromotionFactory.getPromotionType
 import static com.supermarket.pricer.promotion.PromotionType.THREE_FOR_ONE_DOLLAR;
 import static com.supermarket.pricer.weight.WeightUnity.*;
 
+/**
+ * StaticLoader is an implementation of the ItemLoader interface that
+ * provides mechanisms for loading hard coded items right from the code.
+ */
 
 public class StaticLoader implements ItemLoader {
     static WeightConverter gramOunceConverter = ConverterFactory.getConverter(GRAM, OUNCE).get();

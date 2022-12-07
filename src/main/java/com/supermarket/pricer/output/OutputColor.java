@@ -1,5 +1,10 @@
 package com.supermarket.pricer.output;
 
+/**
+ * OutputColor is a enum type holding the possible
+ * colors of log outputs.
+ */
+
 public enum OutputColor {
 
     DEFAULT("\u001B[37m"),

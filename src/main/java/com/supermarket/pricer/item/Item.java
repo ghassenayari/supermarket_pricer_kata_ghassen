@@ -7,6 +7,11 @@ import lombok.Data;
 
 import java.math.BigDecimal;
 
+/**
+ * Item is responsible for depicting a the description single item
+ * and its appropriate behaviour.
+ */
+
 @Data
 @Builder
 public class Item {

@@ -11,6 +11,10 @@ import static com.supermarket.pricer.output.Constants.*;
 import static com.supermarket.pricer.output.OutputColor.GREEN;
 import static com.supermarket.pricer.output.OutputHandler.print;
 
+/**
+ * Main entry class.
+ */
+
 public class Main {
 
     static Basket basket = new Basket();

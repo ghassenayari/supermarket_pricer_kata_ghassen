@@ -4,6 +4,14 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+/**
+ * OutputHandler is responsible for wrapping up the logging methods
+ * that are used to display the content of this console application.
+ * <p>
+ * Besides the default way, it provides an optional selection
+ * of the output color.
+ */
+
 public class OutputHandler {
 
     private static final Logger LOGGER = Logger.getLogger("InfoDisplay");

@@ -12,6 +12,11 @@ import java.util.Optional;
 import static com.supermarket.pricer.output.Constants.ERROR_WHEN_CREATING_INSTANCE_OF_PROMOTION;
 import static com.supermarket.pricer.promotion.PromotionType.*;
 
+/**
+ * PromotionFactory is a factory class dedicated for creating
+ * an Promotion instance from a convenient promotion source.
+ */
+
 public class PromotionFactory {
 
     static EnumMap<PromotionType, Class> promotionMap = new EnumMap<>(PromotionType.class);
