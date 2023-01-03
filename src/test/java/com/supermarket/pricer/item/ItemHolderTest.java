@@ -15,7 +15,7 @@ class ItemHolderTest {
 
     @Test
     void getItemById_99999_EmptyOptional() {
-        Optional<Item> result = ItemHolder.getItemById(0);
+        Optional<Item> result = ItemHolder.getItemById(99999);
         Assertions.assertEquals(Optional.empty(), result);
     }
 
